@@ -1,0 +1,36 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<sheets>
+		<sDEF>
+		<ROOT>
+			<TCEforms>
+				<sheetTitle>LLL:EXT:ms_ajaxwrapper/pi1/locallang.xml:sheetTitle.root</sheetTitle>
+			</TCEforms>
+			<type>array</type>
+			<el>
+				<content_uid>
+					<TCEforms>
+						<label>LLL:EXT:ms_ajaxwrapper/pi1/locallang.xml:content_uid</label>
+						<config>
+							<type>group</type>
+							<internal_type>db</internal_type>
+							<allowed>tt_content</allowed>
+							<size>1</size>
+							<maxitems>1</maxitems>
+							<minitems>0</minitems>
+							<show_thumbs>1</show_thumbs>
+							<wizards>
+								<suggest>
+									<type>suggest</type>
+								</suggest>
+							</wizards>
+						</config>
+					</TCEforms>
+				</content_uid>
+			</el>
+		</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>
