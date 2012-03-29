@@ -1,0 +1,58 @@
+tx_msajaxwrapper_page = PAGE
+tx_msajaxwrapper_page {
+	typeNum = {$plugin.tx_msajaxwrapper.type_num}
+
+	config >
+	config {
+		disableAllHeaderCode = 1
+		admPanel = 0
+		no_cache = 1
+		metaCharset = utf-8
+		additionalHeaders = Content-Type:text/xml;charset=utf-8
+		xhtml_cleaning = 0
+		admPanel = 0
+		sendNoCacheHeaders = 1
+	}
+
+	10 = RECORDS
+	10 {
+		stdWrap.dataWrap = <div id="xl_{GP:parent_uid}_{GP:content_uid}">|</div>
+		tables = tt_content
+		source.cObject = TEXT
+		source.cObject {
+			data = GP:content_uid
+			inval = 1
+		}
+#		conf.tt_content < tt_content
+	}
+}
+
+plugin.tx_msajaxwrapper_pi1 {
+	templateFile = EXT:ms_ajaxwrapper/res/template.html
+	ajaxLoader = /typo3conf/ext/ms_ajaxwrapper/res/ms_ajaxwrapper_loader.js
+	tofooter = footer
+
+## Do not use this fields (unless you know what you do):
+# uid
+# content_uid
+
+	addFieldsToData = additional_params, type_num
+	wrapData {
+		additional_params.cObject = COA
+		additional_params.cObject {
+			10 = TEXT
+			10.data = GP:L
+			10.intval = 1
+			10.wrap = &L=|
+		}
+		type_num.cObject = TEXT
+		type_num.cObject.value = {$plugin.tx_msajaxwrapper.type_num}
+	}
+}
+
+plugin.tx_msajaxwrapper_pi1._CSS_DEFAULT_STYLE (
+.tx-msajaxwrapper-pi1 .loading {
+	background: url('/typo3conf/ext/ms_ajaxwrapper/res/ajax-loader.gif') center center no-repeat;
+	height: 20px;
+}
+)
