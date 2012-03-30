@@ -12,7 +12,7 @@ t3lib_extMgm::addPiFlexFormValue($_EXTKEY . '_pi1', 'FILE:EXT:' . $_EXTKEY . '/p
 t3lib_extMgm::addPlugin(array(
 	'LLL:EXT:ms_ajaxwrapper/locallang_db.xml:tt_content.list_type_pi1',
 	$_EXTKEY . '_pi1',
-	t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon.gif'
+	t3lib_extMgm::extRelPath($_EXTKEY) . 'ext_icon.png'
 ),'list_type');
 
 
